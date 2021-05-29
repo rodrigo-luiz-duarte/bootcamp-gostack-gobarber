@@ -32,8 +32,6 @@ const SignIn: React.FC = () => {
 
   const history = useHistory();
 
-  console.log("Usuário logado:", user);
-
   const handleSubmit = useCallback(
     async (data: SignInFormData) => {
       try {
@@ -60,6 +58,7 @@ const SignIn: React.FC = () => {
         if (error instanceof Yup.ValidationError) {
           const errors = getValidationErrors(error);
           formRef.current?.setErrors(errors);
+          return;
         }
 
         addToast({
@@ -93,7 +92,7 @@ const SignIn: React.FC = () => {
 
             <Button type="submit">Entrar</Button>
 
-            <a href="forgot">Esqueci minha senha</a>
+            <Link to="/forgot-password">Esqueci minha senha</Link>
           </Form>
 
           <Link to="/signup">

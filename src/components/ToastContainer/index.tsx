@@ -1,5 +1,5 @@
 import React from "react";
-import { useTransition, UseTransitionProps } from "react-spring";
+import { useTransition } from "react-spring";
 
 import { Container } from "./styles";
 import Toast from "./Toast";
